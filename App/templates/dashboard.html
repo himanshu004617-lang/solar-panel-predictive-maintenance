@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Solar Panel Predictive Maintenance</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Solar Panel Predictive Maintenance</h1>
+
+        <p class="subtitle">
+            AI-Based Solar Panel Fault Detection System
+        </p>
+
+        <div class="card">
+
+            <h2>Enter Solar Panel Data</h2>
+
+            <form id="predictionForm">
+
+                <label>DC Current 1 (idc1)</label>
+                <input type="number" step="any" id="idc1" required>
+
+                <label>DC Current 2 (idc2)</label>
+                <input type="number" step="any" id="idc2" required>
+
+                <label>DC Voltage 1 (vdc1)</label>
+                <input type="number" step="any" id="vdc1" required>
+
+                <label>DC Voltage 2 (vdc2)</label>
+                <input type="number" step="any" id="vdc2" required>
+
+                <label>Irradiance (irr)</label>
+                <input type="number" step="any" id="irr" required>
+
+                <label>PV Temperature (pvt)</label>
+                <input type="number" step="any" id="pvt" required>
+
+                <button type="submit">
+                    Predict Condition
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <div id="result" class="result">
+
+            <h2>Prediction Result</h2>
+
+            <p>
+                Condition:
+                <span id="condition">---</span>
+            </p>
+
+            <p>
+                Maintenance:
+                <span id="maintenance">---</span>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
